@@ -1,0 +1,173 @@
+{
+  "transport": "stdio MCP → socket bridge → native FreeCAD",
+  "cases": {
+    "inspection_actuator": {
+      "cad": "inspection-actuator.FCStd",
+      "step": "inspection-actuator.step",
+      "image": "inspection-actuator.png",
+      "saved_reopened": true,
+      "volumes_mm3": {
+        "Frame": 265139.5499529568,
+        "Ram": 65294.871757351495
+      },
+      "stroke_mm": 60.00000000000003,
+      "rotation_degrees": 90.00000000000006,
+      "simulation": "Simulation",
+      "frames": 42,
+      "bom": "actuator-bom.csv",
+      "service_image": "actuator-service.png"
+    },
+    "mounting_plate": {
+      "cad": "mounting-plate.FCStd",
+      "step": "mounting-plate.step",
+      "image": "mounting-plate.png",
+      "saved_reopened": true,
+      "volumes_mm3": {
+        "Plate": 101077.82668811556
+      },
+      "operations": [
+        {
+          "name": "PocketShape",
+          "kind": "PocketShape",
+          "statistics": {
+            "command_count": 198,
+            "path_length": 2441.037053136395,
+            "native_path_length": 2441.037053136395,
+            "rapid_command_count": 77,
+            "cutting_command_count": 120,
+            "non_motion_command_count": 1,
+            "length_unit": "mm",
+            "rapid_length": 521.0370555363947,
+            "cutting_length": 1919.9999976000004,
+            "measured_rapid_length": 521.0370555363947,
+            "measured_cutting_length": 1919.9999976000004,
+            "statistics_complete": true,
+            "unsupported_commands": [],
+            "initial_position": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "expanded_cycle_command_count": 0,
+            "cycle_dwell_seconds": 0,
+            "cycle_semantics": "LinuxCNC RS274 G81/G82/G85",
+            "name": "PocketShape",
+            "cycle_time": "00:05:45",
+            "estimated_time_seconds": null,
+            "commands": null
+          }
+        },
+        {
+          "name": "Drilling",
+          "kind": "Drilling",
+          "statistics": {
+            "command_count": 16,
+            "path_length": 388.14213562373095,
+            "native_path_length": 256.14213562373095,
+            "rapid_command_count": 15,
+            "cutting_command_count": 4,
+            "non_motion_command_count": 4,
+            "length_unit": "mm",
+            "rapid_length": 326.14213562373095,
+            "cutting_length": 62.0,
+            "measured_rapid_length": 326.14213562373095,
+            "measured_cutting_length": 62.0,
+            "statistics_complete": true,
+            "unsupported_commands": [],
+            "initial_position": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "expanded_cycle_command_count": 4,
+            "cycle_dwell_seconds": 0,
+            "cycle_semantics": "LinuxCNC RS274 G81/G82/G85",
+            "name": "Drilling",
+            "cycle_time": "00:01:09",
+            "estimated_time_seconds": null,
+            "commands": null
+          }
+        },
+        {
+          "name": "Profile",
+          "kind": "Profile",
+          "statistics": {
+            "command_count": 47,
+            "path_length": 1876.5631874890946,
+            "native_path_length": 1860.7888748001376,
+            "rapid_command_count": 5,
+            "cutting_command_count": 40,
+            "non_motion_command_count": 2,
+            "length_unit": "mm",
+            "rapid_length": 185.16496805222044,
+            "cutting_length": 1691.3982194368741,
+            "measured_rapid_length": 185.16496805222044,
+            "measured_cutting_length": 1691.3982194368741,
+            "statistics_complete": true,
+            "unsupported_commands": [],
+            "initial_position": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "expanded_cycle_command_count": 0,
+            "cycle_dwell_seconds": 0,
+            "cycle_semantics": "LinuxCNC RS274 G81/G82/G85",
+            "name": "Profile",
+            "cycle_time": "00:03:04",
+            "estimated_time_seconds": null,
+            "commands": null
+          }
+        }
+      ],
+      "job_valid": true,
+      "gcode": "mounting-plate.nc",
+      "setup_report": "mounting-plate-setup.html"
+    },
+    "sensor_housing": {
+      "cad": "sensor-housing.FCStd",
+      "step": "sensor-housing.step",
+      "image": "sensor-housing.png",
+      "saved_reopened": true,
+      "volumes_mm3": {
+        "CrownedHousing": 94372.9323807022,
+        "BottomPlate": 28677.854877628433
+      },
+      "patch_volume_increase_mm3": 28800,
+      "crown_center": {
+        "name": "HousingBlank_nurbs_degree_net_edit",
+        "face_index": 0,
+        "u": 60.0,
+        "v": 40.0,
+        "parameter_space": "native",
+        "input_parameter_space": "normalized",
+        "parameter_range": [
+          0.0,
+          120.0,
+          0.0,
+          80.0
+        ],
+        "inside_face": true,
+        "orientation": "Forward",
+        "point": [
+          60.0,
+          40.00000000000001,
+          30.75
+        ]
+      },
+      "original_perimeter_preserved": true
+    }
+  },
+  "registered_tools": 342,
+  "freecad_version": [
+    "1",
+    "1",
+    "3",
+    "20260725 (Git shallow)",
+    "Unknown",
+    "2026/07/25 04:52:02",
+    "grafted,grafted",
+    "145529fe741292ff0b3977a01195bf0247425794"
+  ],
+  "complete": true
+}

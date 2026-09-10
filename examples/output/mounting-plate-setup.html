@@ -1,0 +1,992 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <title>Setup Report for FreeCAD Job: Path Special</title>
+    <style type="text/css">
+        /* Reset margins and padding */
+        div, dl, dt, dd, ul, ol, li, h1, h2, h3, #toctitle, .sidebarblock>.content>.title, h4, h5, h6, pre, form, p, blockquote, th, td {
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Responsive image handling */
+        img, object, embed {
+            max-width: 100%;
+            height: auto;
+        }
+
+        /* Base styling */
+        body {
+            background: #fff;
+            color: rgba(0,0,0,.8);
+            padding: 0;
+            margin: 0;
+            font-family: "Noto Serif", "DejaVu Serif", serif;
+            line-height: 1;
+            position: relative;
+            cursor: auto;
+            word-wrap: anywhere;
+            -moz-osx-font-smoothing: grayscale;
+            -webkit-font-smoothing: antialiased;
+            max-width: 62.5em;
+            margin-left: auto;
+            margin-right: auto;
+            padding: 20px;
+        }
+
+        /* Container styling */
+        .center-container {
+            max-width: 62.5em;
+            margin-left: auto;
+            margin-right: auto;
+            padding: 20px;
+        }
+
+        /* Headings */
+        h1, h2, h3, #toctitle, h4, h5, h6 {
+            font-family: "Open Sans", "DejaVu Sans", sans-serif;
+            font-weight: 300;
+            font-style: normal;
+            color: #ba3925;
+            text-rendering: optimizeLegibility;
+            margin-top: 1em;
+            margin-bottom: .5em;
+            line-height: 1.0125em;
+        }
+
+        h1 {
+            font-size: 2.125em;
+        }
+
+        h2 {
+            font-size: 1.6875em;
+        }
+
+        h3 {
+            font-size: 1.375em;
+        }
+
+        h4, h5 {
+            font-size: 1.125em;
+        }
+
+        h6 {
+            font-size: 1em;
+        }
+
+        #toctitle {
+            font-size: 1.2em;
+        }
+
+        @media screen and (min-width: 768px) {
+            #toctitle {
+                font-size: 1.375em;
+            }
+        }
+
+        /* Media query for larger screens */
+        @media screen and (min-width: 768px) {
+            h1, h2, h3, h4, h5, h6 {
+                line-height: 1.2;
+            }
+
+            h1 {
+                font-size: 2.75em;
+            }
+
+            h2 {
+                font-size: 2.3125em;
+            }
+
+            h3 {
+                font-size: 1.6875em;
+            }
+
+            h4 {
+                font-size: 1.4375em;
+            }
+        }
+
+        /* Links */
+        a {
+            color: #2156a5;
+            text-decoration: underline;
+            line-height: inherit;
+        }
+
+        /* TOC styling */
+        #toc {
+            border-bottom: 1px solid #e7e7e9;
+            padding-bottom: .5em;
+        }
+
+        #header>h1:first-child+#toc {
+            margin-top: 8px;
+            border-top: 1px solid #dddddf;
+        }
+
+        #toc>ul {
+            margin-left: .125em;
+        }
+
+        #toc ul {
+            font-family: "Open Sans", "DejaVu Sans", sans-serif;
+            list-style-type: none;
+        }
+
+        #toc li {
+            line-height: 1.3334;
+            margin-top: .3334em;
+        }
+
+        #toc a {
+            text-decoration: none;
+        }
+
+        a:hover, a:focus {
+            color: #1d4b8f;
+        }
+
+        /* Lists */
+        ul, ol, dl {
+            line-height: 1.6;
+            margin-bottom: 1.25em;
+            list-style-position: outside;
+            font-family: inherit;
+            margin-left: 1.5em;
+        }
+
+        ul {
+            list-style: disc;
+        }
+
+        ul li ul, ul li ol {
+            margin-left: 1.25em;
+            margin-bottom: 0;
+        }
+
+        /* TOC section levels */
+        #toc ul.sectlevel0>li>a {
+            font-style: italic;
+        }
+
+        #toc ul.sectlevel0 ul.sectlevel1 {
+            margin: .5em 0;
+        }
+
+        @media screen and (min-width: 768px) {
+            #toc.toc2 ul ul {
+                margin-left: 0;
+                padding-left: 1em;
+            }
+
+            #toc.toc2 ul.sectlevel0 ul.sectlevel1 {
+                padding-left: 0;
+                margin-top: .5em;
+                margin-bottom: .5em;
+            }
+        }
+
+        @media screen and (min-width: 1280px) {
+            #toc.toc2 ul ul {
+                padding-left: 1.25em;
+            }
+        }
+
+        /* Responsive image handling at different screen sizes */
+        @media screen and (max-width: 768px) {
+            td.image-container {
+                max-width: 100%;
+                display: block;
+                margin: 1em auto;
+            }
+
+            table td[rowspan] {
+                display: table-cell;
+            }
+
+            img {
+                max-width: 100%;
+                height: auto;
+            }
+        }
+
+        /* Tables - more detailed styling */
+        table {
+            background: #fff;
+            margin-bottom: 1.25em;
+            border: 1px solid #dedede;
+            word-wrap: normal;
+            border-collapse: collapse;
+            border-spacing: 0;
+            width: 100%;
+        }
+
+        table thead, table tfoot {
+            background: #f7f8f7;
+        }
+
+        table thead tr th, table thead tr td, table tfoot tr th, table tfoot tr td {
+            padding: .5em .625em .625em;
+            font-size: inherit;
+            color: rgba(0,0,0,.8);
+            text-align: left;
+        }
+
+        table tr th, table tr td {
+            padding: .5625em .625em;
+            font-size: inherit;
+            color: rgba(0,0,0,.8);
+            line-height: 1.6;
+            border: 1px solid #dedede;
+        }
+
+        /* Anchor links styling */
+        #content h1>a.anchor,h2>a.anchor,h3>a.anchor,#toctitle>a.anchor,.sidebarblock>.content>.title>a.anchor,h4>a.anchor,h5>a.anchor,h6>a.anchor{
+            position:absolute;
+            z-index:1001;
+            width:1.5ex;
+            margin-left:-1.5ex;
+            display:block;
+            text-decoration:none!important;
+            visibility:hidden;
+            text-align:center;
+            font-weight:400
+        }
+
+        table tr.even, table tr.alt {
+            background: #f8f8f7;
+        }
+
+        /* Image container styling */
+        td.image-container {
+            vertical-align: middle;
+            text-align: center;
+            width: 40%;
+            max-width: 300px;
+        }
+
+        td.image-container img {
+            max-width: 100%;
+            height: auto;
+            object-fit: contain;
+        }
+
+        /* Text styling */
+        p {
+            line-height: 1.6;
+            margin-bottom: 1.25em;
+            text-rendering: optimizeLegibility;
+        }
+
+        strong, b {
+            font-weight: bold;
+            line-height: inherit;
+        }
+
+        em, i {
+            font-style: italic;
+            line-height: inherit;
+        }
+
+        /* Top navigation links - base style */
+        .top-link {
+            display: inline-block;
+            float: right;
+            font-size: 0.8em;
+            font-weight: normal;
+            text-transform: uppercase;
+            color: #2156a5;
+            text-decoration: none;
+            position: relative;
+        }
+
+        /* Specific positioning for h2 headings */
+        .heading-container h2 + .top-link {
+            margin-top: 4.75em;
+            bottom: 0.3em;
+        }
+
+        /* Specific positioning for h3 headings */
+        .heading-container h3 + .top-link {
+            margin-top: 3.5em;
+            bottom: 0.3em;
+        }
+
+        /* Fallbacks in case the adjacent sibling selector doesn't work as expected */
+        .heading-container:has(h2) .top-link {
+            margin-top: 4.75em;
+        }
+
+        .heading-container:has(h3) .top-link {
+            margin-top: 3.5em;
+        }
+
+        /* Clearfix for headings with top links */
+        .heading-container {
+            overflow: hidden;
+            width: 100%;
+            position: relative;
+        }
+
+        .heading-container h2,
+        .heading-container h3 {
+            float: left;
+            margin-bottom: 0;
+        }
+
+        /* Hide top links when printing */
+        @media print {
+            .top-link {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="header" class="center-container">
+    <h1>Setup Report for CAM Job: PlateJob</h1>
+    <div id="toc" class="toc">
+        <div id="toctitle">Table of Contents</div>
+        <ul class="sectlevel1">
+            <li><a href="#_part_information">Part Information</a></li>
+            <li><a href="#_run_summary">Run Summary</a></li>
+            <li><a href="#_rough_stock">Rough Stock</a></li>
+            <li><a href="#_tool_data">Tool Data</a>
+                <ul class="sectlevel2">
+                    
+<li><a href="#_tool_data_T1">Tool Number: T1</a></li>
+    
+<li><a href="#_tool_data_T2">Tool Number: T2</a></li>
+    
+                </ul>
+            </li>
+            <li><a href="#_output">Output (G-code)</a></li>
+            <li><a href="#_fixtures_and_workholding">Fixtures</a></li>
+            <li><a href="#_squawks">Squawks</a></li>
+        </ul>
+    </div>
+
+
+<div class="heading-container">
+    <h2 id="_part_information"><a name="_part_information"></a>Part Information</h2><a href="#header" class="top-link">Top</a>
+</div>
+<table>
+    <colgroup>
+        <col width="20%"/>
+        <col width="50%"/>
+        <col width="30%"/>
+    </colgroup>
+    <tr>
+        <td>
+            <strong>Part</strong>
+        </td>
+        <td>
+            <table>
+                <colgroup>
+                    <col width="50%"/>
+                    <col width="50%"/>
+                </colgroup>
+                
+<tr>
+    <td>
+        Aluminium mounting plate · 120 × 80 × 12 mm
+    </td>
+    <td>
+        1
+    </td>
+</tr>
+        
+            </table>
+        </td>
+        <td rowspan="7" class="image-container">
+            
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <strong>Sequence</strong>
+        </td>
+        <td>
+            1 of 1
+        </td>
+    </tr>
+
+    <tr>
+        <td>
+            <strong>Job Type</strong>
+        </td>
+        <td>
+            2.5D Milling
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <strong>CAD File</strong>
+        </td>
+        <td>
+            
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <strong>Last Save</strong>
+        </td>
+        <td>
+            Unknown
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <strong>Customer</strong>
+        </td>
+        <td>
+            
+        </td>
+    </tr>
+</table>
+
+<div class="heading-container">
+    <h2 id="_run_summary"><a name="_run_summary"></a>Run Summary</h2><a href="#header" class="top-link">Top</a>
+</div>
+<table>
+    <colgroup>
+        <col width="20%"/>
+        <col width="20%"/>
+        <col width="20%"/>
+        <col width="20%"/>
+        <col width="20%"/>
+    </colgroup>
+    <thead>
+        <tr>
+            <th><strong>Operation</strong></th>
+            <th><strong>Minimum Z</strong></th>
+            <th><strong>Maximum Z</strong></th>
+            <th><strong>Coolant Mode</strong></th>
+            <th><strong>Cycle Time</strong></th>
+        </tr>
+    </thead>
+    <tbody>
+        
+<tr>
+    <td>
+        PocketShape
+    </td>
+    <td>
+        0.00 mm
+    </td>
+    <td>
+        18.00 mm
+    </td>
+    <td>
+        None
+    </td>
+    <td>
+        00:05:45
+    </td>
+</tr>
+        
+<tr>
+    <td>
+        Drilling
+    </td>
+    <td>
+        -0.50 mm
+    </td>
+    <td>
+        18.00 mm
+    </td>
+    <td>
+        None
+    </td>
+    <td>
+        00:01:09
+    </td>
+</tr>
+        
+<tr>
+    <td>
+        Profile
+    </td>
+    <td>
+        0.00 mm
+    </td>
+    <td>
+        18.00 mm
+    </td>
+    <td>
+        None
+    </td>
+    <td>
+        00:03:04
+    </td>
+</tr>
+        
+    </tbody>
+</table>
+
+<div class="heading-container">
+    <h2 id="_rough_stock"><a name="_rough_stock"></a>Rough Stock</h2><a href="#header" class="top-link">Top</a>
+</div>
+
+<table>
+    <colgroup>
+        <col width="30%"/>
+        <col width="30%"/>
+        <col width="40%"/>
+    </colgroup>
+    <tbody>
+        <tr>
+            <td><strong>Material</strong></td>
+            <td>Default</td>
+            <td rowspan="7" class="image-container">
+                
+            </td>
+        </tr>
+        <tr>
+            <td><strong>Surface Speed HSS</strong></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><strong>Surface Speed Carbide</strong></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td><strong>X Size</strong></td>
+        <td>124.00 mm</td>
+    </tr>
+    <tr>
+        <td><strong>Y Size</strong></td>
+        <td>84.00 mm</td>
+    </tr>
+    <tr>
+        <td><strong>Z Size</strong></td>
+        <td>13.00 mm</td>
+    </tr>
+</table>
+
+
+<div class="heading-container">
+    <h2 id="_tool_data"><a name="_tool_data"></a>Tool Data</h2><a href="#header" class="top-link">Top</a>
+</div>
+
+<div class="heading-container">
+    <h3 id="_tool_data_T1">Tool Number: T1</h3><a href="#header" class="top-link">Top</a>
+</div>
+<table>
+    <colgroup>
+        <col width="30%"/>
+        <col width="30%"/>
+        <col width="40%"/>
+    </colgroup>
+    <tr>
+        <td>
+            <strong>Description</strong>
+        </td>
+        <td>
+            Endmill
+        </td>
+        <td class="image-container">
+            
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <strong>Manufacturer</strong>
+        </td>
+        <td colspan="2">
+            
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <strong>Part Number</strong>
+        </td>
+        <td colspan="2">
+            
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <strong>URL</strong>
+        </td>
+        <td colspan="2">
+            
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <strong>Tool Shape</strong>
+        </td>
+        <td colspan="2">
+            Endmill
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <strong>Inspection Notes</strong>
+        </td>
+        <td colspan="2">
+            
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <strong>Tool Diameter</strong>
+        </td>
+        <td colspan="2">
+            6.00 mm
+        </td>
+    </tr>
+</table>
+
+<table cellpadding="2" cellspacing="2" bgcolor="#ffffff" style="background: #ffffff;">
+    <colgroup>
+        <col width="262"/>
+        <col width="262"/>
+        <col width="262"/>
+        <col width="262"/>
+    </colgroup>
+    <tr>
+        <td>
+            <strong>Operation</strong>
+        </td>
+        <td>
+            <strong>Tool Controller</strong>
+        </td>
+        <td>
+            <strong>Feed Rate</strong>
+        </td>
+        <td>
+            <strong>Spindle Speed</strong>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            PocketShape
+        </td>
+        <td>
+            TC: 5mm Endmill
+        </td>
+        <td>
+            10.83 mm/s
+        </td>
+        <td>
+            12000 rpm
+        </td>
+    </tr>
+</table>
+        
+<table cellpadding="2" cellspacing="2" bgcolor="#ffffff" style="background: #ffffff;">
+    <colgroup>
+        <col width="262"/>
+        <col width="262"/>
+        <col width="262"/>
+        <col width="262"/>
+    </colgroup>
+    <tr>
+        <td>
+            <strong>Operation</strong>
+        </td>
+        <td>
+            <strong>Tool Controller</strong>
+        </td>
+        <td>
+            <strong>Feed Rate</strong>
+        </td>
+        <td>
+            <strong>Spindle Speed</strong>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Profile
+        </td>
+        <td>
+            TC: 5mm Endmill
+        </td>
+        <td>
+            10.83 mm/s
+        </td>
+        <td>
+            12000 rpm
+        </td>
+    </tr>
+</table>
+        
+        
+<div class="heading-container">
+    <h3 id="_tool_data_T2">Tool Number: T2</h3><a href="#header" class="top-link">Top</a>
+</div>
+<table>
+    <colgroup>
+        <col width="30%"/>
+        <col width="30%"/>
+        <col width="40%"/>
+    </colgroup>
+    <tr>
+        <td>
+            <strong>Description</strong>
+        </td>
+        <td>
+            Drill
+        </td>
+        <td class="image-container">
+            
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <strong>Manufacturer</strong>
+        </td>
+        <td colspan="2">
+            
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <strong>Part Number</strong>
+        </td>
+        <td colspan="2">
+            
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <strong>URL</strong>
+        </td>
+        <td colspan="2">
+            
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <strong>Tool Shape</strong>
+        </td>
+        <td colspan="2">
+            Drill
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <strong>Inspection Notes</strong>
+        </td>
+        <td colspan="2">
+            
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <strong>Tool Diameter</strong>
+        </td>
+        <td colspan="2">
+            6.60 mm
+        </td>
+    </tr>
+</table>
+
+<table cellpadding="2" cellspacing="2" bgcolor="#ffffff" style="background: #ffffff;">
+    <colgroup>
+        <col width="262"/>
+        <col width="262"/>
+        <col width="262"/>
+        <col width="262"/>
+    </colgroup>
+    <tr>
+        <td>
+            <strong>Operation</strong>
+        </td>
+        <td>
+            <strong>Tool Controller</strong>
+        </td>
+        <td>
+            <strong>Feed Rate</strong>
+        </td>
+        <td>
+            <strong>Spindle Speed</strong>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Drilling
+        </td>
+        <td>
+            ToolController
+        </td>
+        <td>
+            4.17 mm/s
+        </td>
+        <td>
+            4500 rpm
+        </td>
+    </tr>
+</table>
+        
+        
+
+
+<div class="heading-container">
+    <h2 id="_output"><a name="_output"></a>Output (G-code)</h2><a href="#header" class="top-link">Top</a>
+</div>
+<table cellpadding="2" cellspacing="2" bgcolor="#ffffff" style="background: #ffffff;">
+    <colgroup>
+        <col width="525"/>
+        <col width="525"/>
+    </colgroup>
+    <tr>
+        <td>
+            <strong>G-code File</strong>
+        </td>
+        <td>
+            /Users/liushurui/Desktop/cad_mcp/freecad-nexus/examples/output/mounting-plate.nc
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <strong>Last Post Process Date</strong>
+        </td>
+        <td>
+            2026-09-10T10:28:23.488282+00:00
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <strong>Stops</strong>
+        </td>
+        <td>
+            False
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <strong>Programmer</strong>
+        </td>
+        <td>
+            
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <strong>Machine</strong>
+        </td>
+        <td>
+            
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <strong>Postprocessor</strong>
+        </td>
+        <td>
+            
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <strong>Post Processor Flags</strong>
+        </td>
+        <td>
+            
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <strong>File Size (kB)</strong>
+        </td>
+        <td>
+            8.885
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <strong>Line Count</strong>
+        </td>
+        <td>
+            308
+        </td>
+    </tr>
+</table>
+
+<div class="heading-container">
+    <h2 id="_fixtures_and_workholding"><a name="_fixtures_and_workholding"></a>Fixtures</h2><a href="#header" class="top-link">Top</a>
+</div>
+<table cellpadding="2" cellspacing="2" bgcolor="#ffffff" style="background: #ffffff;">
+    <colgroup>
+        <col width="525"/>
+        <col width="525"/>
+    </colgroup>
+    <tr>
+        <td>
+            <strong>Work Offsets</strong>
+        </td>
+        <td>
+            ['G54']
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <strong>Order By</strong>
+        </td>
+        <td>
+            Fixture
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <strong>Part Datum</strong>
+        </td>
+        <td class="image-container">
+            
+        </td>
+    </tr>
+</table>
+
+<div class="heading-container">
+    <h2 id="_squawks"><a name="_squawks"></a>Squawks</h2><a href="#header" class="top-link">Top</a>
+</div>
+<table cellpadding="2" cellspacing="2" bgcolor="#ffffff" style="background-color: #ffffff;">
+    <colgroup>
+        <col width="100"/>
+        <col width="250"/>
+        <col width="250"/>
+        <col width="550"/>
+    </colgroup>
+    <tr>
+        <td>
+            <strong>Note</strong>
+        </td>
+        <td>
+            <strong>Operator</strong>
+        </td>
+        <td>
+            <strong>Date</strong>
+        </td>
+        <td>
+            <strong>Note</strong>
+        </td>
+        
+<tr>
+    <td>
+        <img src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIj8+CjwhLS0gQ3JlYXRlZCB3aXRoIElua3NjYXBlIChodHRwOi8vd3d3Lmlua3NjYXBlLm9yZy8pIC0tPgoKPHN2ZwogICB3aWR0aD0iNjQiCiAgIGhlaWdodD0iNjQiCiAgIGlkPSJzdmcxMzA3IgogICB2ZXJzaW9uPSIxLjAiCiAgIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIgogICB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciCiAgIHhtbG5zOnN2Zz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciCiAgIHhtbG5zOnJkZj0iaHR0cDovL3d3dy53My5vcmcvMTk5OS8wMi8yMi1yZGYtc3ludGF4LW5zIyIKICAgeG1sbnM6Y2M9Imh0dHA6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL25zIyIKICAgeG1sbnM6ZGM9Imh0dHA6Ly9wdXJsLm9yZy9kYy9lbGVtZW50cy8xLjEvIj4KICA8ZGVmcwogICAgIGlkPSJkZWZzMTMwOSI+CiAgICA8bGluZWFyR3JhZGllbnQKICAgICAgIGlkPSJsaW5lYXJHcmFkaWVudDM5NzIiPgogICAgICA8c3RvcAogICAgICAgICBzdHlsZT0ic3RvcC1jb2xvcjojZmZmZmZmO3N0b3Atb3BhY2l0eToxIgogICAgICAgICBvZmZzZXQ9IjAiCiAgICAgICAgIGlkPSJzdG9wMzk3NCIgLz4KICAgICAgPHN0b3AKICAgICAgICAgc3R5bGU9InN0b3AtY29sb3I6I2QzZDdjZjtzdG9wLW9wYWNpdHk6MSIKICAgICAgICAgb2Zmc2V0PSIxIgogICAgICAgICBpZD0ic3RvcDM5NzYiIC8+CiAgICA8L2xpbmVhckdyYWRpZW50PgogICAgPGxpbmVhckdyYWRpZW50CiAgICAgICBpZD0ibGluZWFyR3JhZGllbnQzODgxIj4KICAgICAgPHN0b3AKICAgICAgICAgc3R5bGU9InN0b3AtY29sb3I6I2ZjZTk0ZjtzdG9wLW9wYWNpdHk6MTsiCiAgICAgICAgIG9mZnNldD0iMCIKICAgICAgICAgaWQ9InN0b3AzODgzIiAvPgogICAgICA8c3RvcAogICAgICAgICBzdHlsZT0ic3RvcC1jb2xvcjojZWRkNDAwO3N0b3Atb3BhY2l0eToxIgogICAgICAgICBvZmZzZXQ9IjEiCiAgICAgICAgIGlkPSJzdG9wMzg4NSIgLz4KICAgIDwvbGluZWFyR3JhZGllbnQ+CiAgICA8bGluZWFyR3JhZGllbnQKICAgICAgIGlkPSJsaW5lYXJHcmFkaWVudDM5MDYiPgogICAgICA8c3RvcAogICAgICAgICBzdHlsZT0ic3RvcC1jb2xvcjojZWJmOTBhO3N0b3Atb3BhY2l0eTowOyIKICAgICAgICAgb2Zmc2V0PSIwIgogICAgICAgICBpZD0ic3RvcDM5MDgiIC8+CiAgICAgIDxzdG9wCiAgICAgICAgIHN0eWxlPSJzdG9wLWNvbG9yOiNlYmY5MGE7c3RvcC1vcGFjaXR5OjE7IgogICAgICAgICBvZmZzZXQ9IjEiCiAgICAgICAgIGlkPSJzdG9wMzkxMCIgLz4KICAgIDwvbGluZWFyR3JhZGllbnQ+CiAgICA8bGluZWFyR3JhZGllbnQKICAgICAgIGlkPSJsaW5lYXJHcmFkaWVudDUwNDAiPgogICAgICA8c3RvcAogICAgICAgICBzdHlsZT0ic3RvcC1jb2xvcjojZmYwMDAwO3N0b3Atb3BhY2l0eToxOyIKICAgICAgICAgb2Zmc2V0PSIwIgogICAgICAgICBpZD0ic3RvcDUwNDIiIC8+CiAgICAgIDxzdG9wCiAgICAgICAgIHN0eWxlPSJzdG9wLWNvbG9yOiM4ZTAwMDA7c3RvcC1vcGFjaXR5OjE7IgogICAgICAgICBvZmZzZXQ9IjEiCiAgICAgICAgIGlkPSJzdG9wNTA0NCIgLz4KICAgIDwvbGluZWFyR3JhZGllbnQ+CiAgICA8bGluZWFyR3JhZGllbnQKICAgICAgIGlkPSJsaW5lYXJHcmFkaWVudDUwMDciPgogICAgICA8c3RvcAogICAgICAgICBpZD0ic3RvcDUwMDkiCiAgICAgICAgIG9mZnNldD0iMCIKICAgICAgICAgc3R5bGU9InN0b3AtY29sb3I6I2ZmMDAwMDtzdG9wLW9wYWNpdHk6MC4wODY5NTY1MjsiIC8+CiAgICAgIDxzdG9wCiAgICAgICAgIGlkPSJzdG9wNTAxMSIKICAgICAgICAgb2Zmc2V0PSIxIgogICAgICAgICBzdHlsZT0ic3RvcC1jb2xvcjojZDQwMDAwO3N0b3Atb3BhY2l0eToxOyIgLz4KICAgIDwvbGluZWFyR3JhZGllbnQ+CiAgICA8bGluZWFyR3JhZGllbnQKICAgICAgIGlkPSJsaW5lYXJHcmFkaWVudDQzNjIiPgogICAgICA8c3RvcAogICAgICAgICBpZD0ic3RvcDQzNjQiCiAgICAgICAgIG9mZnNldD0iMCIKICAgICAgICAgc3R5bGU9InN0b3AtY29sb3I6I2NhYmQ1NTtzdG9wLW9wYWNpdHk6MTsiIC8+CiAgICAgIDxzdG9wCiAgICAgICAgIGlkPSJzdG9wNDM2NiIKICAgICAgICAgb2Zmc2V0PSIxIgogICAgICAgICBzdHlsZT0ic3RvcC1jb2xvcjojZTNkMDMyO3N0b3Atb3BhY2l0eTowLjA2MDM0NDgzOyIgLz4KICAgIDwvbGluZWFyR3JhZGllbnQ+CiAgICA8bGluZWFyR3JhZGllbnQKICAgICAgIGlkPSJsaW5lYXJHcmFkaWVudDQxOTEiPgogICAgICA8c3RvcAogICAgICAgICBzdHlsZT0ic3RvcC1jb2xvcjojMDA0MGZmO3N0b3Atb3BhY2l0eToxOyIKICAgICAgICAgb2Zmc2V0PSIwIgogICAgICAgICBpZD0ic3RvcDQxOTMiIC8+CiAgICAgIDxzdG9wCiAgICAgICAgIHN0eWxlPSJzdG9wLWNvbG9yOiMwMDg3ZmY7c3RvcC1vcGFjaXR5OjA7IgogICAgICAgICBvZmZzZXQ9IjEiCiAgICAgICAgIGlkPSJzdG9wNDE5NSIgLz4KICAgIDwvbGluZWFyR3JhZGllbnQ+CiAgICA8bGluZWFyR3JhZGllbnQKICAgICAgIGlkPSJsaW5lYXJHcmFkaWVudDQxNTAiPgogICAgICA8c3RvcAogICAgICAgICBzdHlsZT0ic3RvcC1jb2xvcjojZmYwMDAwO3N0b3Atb3BhY2l0eTowLjM5MTMwNDM0OyIKICAgICAgICAgb2Zmc2V0PSIwIgogICAgICAgICBpZD0ic3RvcDQxNTIiIC8+CiAgICAgIDxzdG9wCiAgICAgICAgIHN0eWxlPSJzdG9wLWNvbG9yOiNmZjAwMDA7c3RvcC1vcGFjaXR5OjE7IgogICAgICAgICBvZmZzZXQ9IjEiCiAgICAgICAgIGlkPSJzdG9wNDE1NCIgLz4KICAgIDwvbGluZWFyR3JhZGllbnQ+CiAgICA8bGluZWFyR3JhZGllbnQKICAgICAgIGlkPSJsaW5lYXJHcmFkaWVudDM4NjciPgogICAgICA8c3RvcAogICAgICAgICBzdHlsZT0ic3RvcC1jb2xvcjojMzFkOTAwO3N0b3Atb3BhY2l0eToxOyIKICAgICAgICAgb2Zmc2V0PSIwIgogICAgICAgICBpZD0ic3RvcDM4NjkiIC8+CiAgICAgIDxzdG9wCiAgICAgICAgIHN0eWxlPSJzdG9wLWNvbG9yOiM2ZGZmMDA7c3RvcC1vcGFjaXR5OjAuOTkxMzc5MzI7IgogICAgICAgICBvZmZzZXQ9IjEiCiAgICAgICAgIGlkPSJzdG9wMzg3MSIgLz4KICAgIDwvbGluZWFyR3JhZGllbnQ+CiAgICA8bGluZWFyR3JhZGllbnQKICAgICAgIGlkPSJsaW5lYXJHcmFkaWVudDI4MTciPgogICAgICA8c3RvcAogICAgICAgICBzdHlsZT0ic3RvcC1jb2xvcjojMDAwMDAwO3N0b3Atb3BhY2l0eToxOyIKICAgICAgICAgb2Zmc2V0PSIwIgogICAgICAgICBpZD0ic3RvcDI4MTkiIC8+CiAgICAgIDxzdG9wCiAgICAgICAgIHN0eWxlPSJzdG9wLWNvbG9yOiNmZmZmZmY7c3RvcC1vcGFjaXR5OjAuNDg0NTM2MDg7IgogICAgICAgICBvZmZzZXQ9IjEiCiAgICAgICAgIGlkPSJzdG9wMjgyMSIgLz4KICAgIDwvbGluZWFyR3JhZGllbnQ+CiAgICA8bGluZWFyR3JhZGllbnQKICAgICAgIGlkPSJsaW5lYXJHcmFkaWVudDI1ODQiPgogICAgICA8c3RvcAogICAgICAgICBzdHlsZT0ic3RvcC1jb2xvcjojMDAwMDAwO3N0b3Atb3BhY2l0eToxOyIKICAgICAgICAgb2Zmc2V0PSIwIgogICAgICAgICBpZD0ic3RvcDI1ODYiIC8+CiAgICAgIDxzdG9wCiAgICAgICAgIHN0eWxlPSJzdG9wLWNvbG9yOiNmZmZmZmY7c3RvcC1vcGFjaXR5OjA7IgogICAgICAgICBvZmZzZXQ9IjEiCiAgICAgICAgIGlkPSJzdG9wMjU4OCIgLz4KICAgIDwvbGluZWFyR3JhZGllbnQ+CiAgICA8bGluZWFyR3JhZGllbnQKICAgICAgIGlkPSJsaW5lYXJHcmFkaWVudDI2OTciPgogICAgICA8c3RvcAogICAgICAgICBpZD0ic3RvcDI2OTkiCiAgICAgICAgIG9mZnNldD0iMCIKICAgICAgICAgc3R5bGU9InN0b3AtY29sb3I6I2JhYmRiNiIgLz4KICAgICAgPHN0b3AKICAgICAgICAgaWQ9InN0b3AyNzAxIgogICAgICAgICBvZmZzZXQ9IjEiCiAgICAgICAgIHN0eWxlPSJzdG9wLWNvbG9yOiM1NTU3NTMiIC8+CiAgICA8L2xpbmVhckdyYWRpZW50PgogICAgPGxpbmVhckdyYWRpZW50CiAgICAgICBpZD0ibGluZWFyR3JhZGllbnQyNjc5Ij4KICAgICAgPHN0b3AKICAgICAgICAgaWQ9InN0b3AyNjgxIgogICAgICAgICBvZmZzZXQ9IjAiCiAgICAgICAgIHN0eWxlPSJzdG9wLWNvbG9yOiNmN2Y3Zjc7c3RvcC1vcGFjaXR5OjEiIC8+CiAgICAgIDxzdG9wCiAgICAgICAgIGlkPSJzdG9wMjY4MyIKICAgICAgICAgb2Zmc2V0PSIxIgogICAgICAgICBzdHlsZT0ic3RvcC1jb2xvcjojY2NkMGM3O3N0b3Atb3BhY2l0eToxIiAvPgogICAgPC9saW5lYXJHcmFkaWVudD4KICAgIDxsaW5lYXJHcmFkaWVudAogICAgICAgaWQ9ImxpbmVhckdyYWRpZW50MzA4MSI+CiAgICAgIDxzdG9wCiAgICAgICAgIHN0eWxlPSJzdG9wLWNvbG9yOiNmZmZmZmY7c3RvcC1vcGFjaXR5OjE7IgogICAgICAgICBvZmZzZXQ9IjAiCiAgICAgICAgIGlkPSJzdG9wMzA4MyIgLz4KICAgICAgPHN0b3AKICAgICAgICAgc3R5bGU9InN0b3AtY29sb3I6I2ZmZmZmZjtzdG9wLW9wYWNpdHk6MDsiCiAgICAgICAgIG9mZnNldD0iMSIKICAgICAgICAgaWQ9InN0b3AzMDg1IiAvPgogICAgPC9saW5lYXJHcmFkaWVudD4KICAgIDxsaW5lYXJHcmFkaWVudAogICAgICAgaWQ9ImxpbmVhckdyYWRpZW50ODY2MiI+CiAgICAgIDxzdG9wCiAgICAgICAgIHN0eWxlPSJzdG9wLWNvbG9yOiMwMDAwMDA7c3RvcC1vcGFjaXR5OjE7IgogICAgICAgICBvZmZzZXQ9IjAiCiAgICAgICAgIGlkPSJzdG9wODY2NCIgLz4KICAgICAgPHN0b3AKICAgICAgICAgc3R5bGU9InN0b3AtY29sb3I6IzAwMDAwMDtzdG9wLW9wYWNpdHk6MDsiCiAgICAgICAgIG9mZnNldD0iMSIKICAgICAgICAgaWQ9InN0b3A4NjY2IiAvPgogICAgPC9saW5lYXJHcmFkaWVudD4KICAgIDxyYWRpYWxHcmFkaWVudAogICAgICAgeGxpbms6aHJlZj0iI2xpbmVhckdyYWRpZW50MjY3OSIKICAgICAgIGlkPSJyYWRpYWxHcmFkaWVudDIxMTIiCiAgICAgICBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIKICAgICAgIGdyYWRpZW50VHJhbnNmb3JtPSJtYXRyaXgoMy41NjIzMDllLTYsLTEuMDcyMDUsMS45OTIxMDQsLTEuMjUwNjU4ZS02LC00Mi42MTE2NSwyODMuNzg5MSkiCiAgICAgICBjeD0iMTY5Ljc3MTcxIgogICAgICAgY3k9IjEwMC4yMDEwNyIKICAgICAgIGZ4PSIxNjkuNzcxNzEiCiAgICAgICBmeT0iMTAwLjIwMTA3IgogICAgICAgcj0iMTEiIC8+CiAgICA8bGluZWFyR3JhZGllbnQKICAgICAgIHhsaW5rOmhyZWY9IiNsaW5lYXJHcmFkaWVudDI2OTciCiAgICAgICBpZD0ibGluZWFyR3JhZGllbnQyMTIyIgogICAgICAgZ3JhZGllbnRVbml0cz0idXNlclNwYWNlT25Vc2UiCiAgICAgICBncmFkaWVudFRyYW5zZm9ybT0idHJhbnNsYXRlKC0xMiwwKSIKICAgICAgIHgxPSIxNjkiCiAgICAgICB5MT0iMTEwLjMzODA1IgogICAgICAgeDI9IjE2OSIKICAgICAgIHkyPSI5My4yMDQ4NDkiIC8+CiAgICA8bGluZWFyR3JhZGllbnQKICAgICAgIHhsaW5rOmhyZWY9IiNsaW5lYXJHcmFkaWVudDMwODEiCiAgICAgICBpZD0ibGluZWFyR3JhZGllbnQyMTI0IgogICAgICAgZ3JhZGllbnRVbml0cz0idXNlclNwYWNlT25Vc2UiCiAgICAgICBncmFkaWVudFRyYW5zZm9ybT0idHJhbnNsYXRlKDEzMyw3MC45OTk5OSkiCiAgICAgICB4MT0iMTUuMDg5NTIxIgogICAgICAgeTE9IjE1LjI5MTk5NCIKICAgICAgIHgyPSIxNCIKICAgICAgIHkyPSI1Mi41MTA1NzQiIC8+CiAgICA8cmFkaWFsR3JhZGllbnQKICAgICAgIHhsaW5rOmhyZWY9IiNsaW5lYXJHcmFkaWVudDg2NjIiCiAgICAgICBpZD0icmFkaWFsR3JhZGllbnQyMTM3IgogICAgICAgZ3JhZGllbnRVbml0cz0idXNlclNwYWNlT25Vc2UiCiAgICAgICBncmFkaWVudFRyYW5zZm9ybT0ibWF0cml4KDEsMCwwLDAuNTM2NzIzLDAsMTYuODczMDYpIgogICAgICAgY3g9IjI0LjgzNzEyNiIKICAgICAgIGN5PSIzNi40MjExMjciCiAgICAgICBmeD0iMjQuODM3MTI2IgogICAgICAgZnk9IjM2LjQyMTEyNyIKICAgICAgIHI9IjE1LjY0NDczNyIgLz4KICAgIDxyYWRpYWxHcmFkaWVudAogICAgICAgeGxpbms6aHJlZj0iI2xpbmVhckdyYWRpZW50ODY2MiIKICAgICAgIGlkPSJyYWRpYWxHcmFkaWVudDIxMzkiCiAgICAgICBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIKICAgICAgIGdyYWRpZW50VHJhbnNmb3JtPSJtYXRyaXgoMSwwLDAsMC41MzY3MjMsMCwxNi44NzMwNikiCiAgICAgICBjeD0iMjQuODM3MTI2IgogICAgICAgY3k9IjM2LjQyMTEyNyIKICAgICAgIGZ4PSIyNC44MzcxMjYiCiAgICAgICBmeT0iMzYuNDIxMTI3IgogICAgICAgcj0iMTUuNjQ0NzM3IiAvPgogICAgPHJhZGlhbEdyYWRpZW50CiAgICAgICB4bGluazpocmVmPSIjbGluZWFyR3JhZGllbnQ4NjYyIgogICAgICAgaWQ9InJhZGlhbEdyYWRpZW50MjcyNSIKICAgICAgIGdyYWRpZW50VW5pdHM9InVzZXJTcGFjZU9uVXNlIgogICAgICAgZ3JhZGllbnRUcmFuc2Zvcm09Im1hdHJpeCgxLDAsMCwwLjUzNjcyMywwLDE2Ljg3MzA2KSIKICAgICAgIGN4PSIyNC44MzcxMjYiCiAgICAgICBjeT0iMzYuNDIxMTI3IgogICAgICAgZng9IjI0LjgzNzEyNiIKICAgICAgIGZ5PSIzNi40MjExMjciCiAgICAgICByPSIxNS42NDQ3MzciIC8+CiAgICA8cmFkaWFsR3JhZGllbnQKICAgICAgIHhsaW5rOmhyZWY9IiNsaW5lYXJHcmFkaWVudDg2NjIiCiAgICAgICBpZD0icmFkaWFsR3JhZGllbnQyNzI3IgogICAgICAgZ3JhZGllbnRVbml0cz0idXNlclNwYWNlT25Vc2UiCiAgICAgICBncmFkaWVudFRyYW5zZm9ybT0ibWF0cml4KDEsMCwwLDAuNTM2NzIzLDAsMTYuODczMDYpIgogICAgICAgY3g9IjI0LjgzNzEyNiIKICAgICAgIGN5PSIzNi40MjExMjciCiAgICAgICBmeD0iMjQuODM3MTI2IgogICAgICAgZnk9IjM2LjQyMTEyNyIKICAgICAgIHI9IjE1LjY0NDczNyIgLz4KICAgIDxyYWRpYWxHcmFkaWVudAogICAgICAgeGxpbms6aHJlZj0iI2xpbmVhckdyYWRpZW50MjY3OSIKICAgICAgIGlkPSJyYWRpYWxHcmFkaWVudDI3MjkiCiAgICAgICBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIKICAgICAgIGdyYWRpZW50VHJhbnNmb3JtPSJtYXRyaXgoMy41NjIzMDllLTYsLTEuMDcyMDUsMS45OTIxMDQsLTEuMjUwNjU4ZS02LC00Mi42MTE2NSwyODMuNzg5MSkiCiAgICAgICBjeD0iMTY5Ljc3MTcxIgogICAgICAgY3k9IjEwMC4yMDEwNyIKICAgICAgIGZ4PSIxNjkuNzcxNzEiCiAgICAgICBmeT0iMTAwLjIwMTA3IgogICAgICAgcj0iMTEiIC8+CiAgICA8bGluZWFyR3JhZGllbnQKICAgICAgIHhsaW5rOmhyZWY9IiNsaW5lYXJHcmFkaWVudDI2OTciCiAgICAgICBpZD0ibGluZWFyR3JhZGllbnQyNzMxIgogICAgICAgZ3JhZGllbnRVbml0cz0idXNlclNwYWNlT25Vc2UiCiAgICAgICBncmFkaWVudFRyYW5zZm9ybT0idHJhbnNsYXRlKC0xMiwwKSIKICAgICAgIHgxPSIxNjkiCiAgICAgICB5MT0iMTEwLjMzODA1IgogICAgICAgeDI9IjE2OSIKICAgICAgIHkyPSI5My4yMDQ4NDkiIC8+CiAgICA8bGluZWFyR3JhZGllbnQKICAgICAgIHhsaW5rOmhyZWY9IiNsaW5lYXJHcmFkaWVudDMwODEiCiAgICAgICBpZD0ibGluZWFyR3JhZGllbnQyNzMzIgogICAgICAgZ3JhZGllbnRVbml0cz0idXNlclNwYWNlT25Vc2UiCiAgICAgICBncmFkaWVudFRyYW5zZm9ybT0idHJhbnNsYXRlKDEzMyw3MC45OTk5OSkiCiAgICAgICB4MT0iMTUuMDg5NTIxIgogICAgICAgeTE9IjE1LjI5MTk5NCIKICAgICAgIHgyPSIxNCIKICAgICAgIHkyPSI1Mi41MTA1NzQiIC8+CiAgICA8cmFkaWFsR3JhZGllbnQKICAgICAgIHhsaW5rOmhyZWY9IiNsaW5lYXJHcmFkaWVudDg2NjIiCiAgICAgICBpZD0icmFkaWFsR3JhZGllbnQyNzQ1IgogICAgICAgZ3JhZGllbnRVbml0cz0idXNlclNwYWNlT25Vc2UiCiAgICAgICBncmFkaWVudFRyYW5zZm9ybT0ibWF0cml4KDEsMCwwLDAuNTM2NzIzLDAsMTYuODczMDYpIgogICAgICAgY3g9IjI0LjgzNzEyNiIKICAgICAgIGN5PSIzNi40MjExMjciCiAgICAgICBmeD0iMjQuODM3MTI2IgogICAgICAgZnk9IjM2LjQyMTEyNyIKICAgICAgIHI9IjE1LjY0NDczNyIgLz4KICAgIDxyYWRpYWxHcmFkaWVudAogICAgICAgeGxpbms6aHJlZj0iI2xpbmVhckdyYWRpZW50ODY2MiIKICAgICAgIGlkPSJyYWRpYWxHcmFkaWVudDI3NDciCiAgICAgICBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIKICAgICAgIGdyYWRpZW50VHJhbnNmb3JtPSJtYXRyaXgoMSwwLDAsMC41MzY3MjMsMCwxNi44NzMwNikiCiAgICAgICBjeD0iMjQuODM3MTI2IgogICAgICAgY3k9IjM2LjQyMTEyNyIKICAgICAgIGZ4PSIyNC44MzcxMjYiCiAgICAgICBmeT0iMzYuNDIxMTI3IgogICAgICAgcj0iMTUuNjQ0NzM3IiAvPgogICAgPHJhZGlhbEdyYWRpZW50CiAgICAgICB4bGluazpocmVmPSIjbGluZWFyR3JhZGllbnQyNjc5IgogICAgICAgaWQ9InJhZGlhbEdyYWRpZW50Mjc0OSIKICAgICAgIGdyYWRpZW50VW5pdHM9InVzZXJTcGFjZU9uVXNlIgogICAgICAgZ3JhZGllbnRUcmFuc2Zvcm09Im1hdHJpeCgzLjU2MjMwOWUtNiwtMS4wNzIwNSwxLjk5MjEwNCwtMS4yNTA2NThlLTYsLTQyLjYxMTY1LDI4My43ODkxKSIKICAgICAgIGN4PSIxNjkuNzcxNzEiCiAgICAgICBjeT0iMTAwLjIwMTA3IgogICAgICAgZng9IjE2OS43NzE3MSIKICAgICAgIGZ5PSIxMDAuMjAxMDciCiAgICAgICByPSIxMSIgLz4KICAgIDxsaW5lYXJHcmFkaWVudAogICAgICAgeGxpbms6aHJlZj0iI2xpbmVhckdyYWRpZW50MjY5NyIKICAgICAgIGlkPSJsaW5lYXJHcmFkaWVudDI3NTEiCiAgICAgICBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIKICAgICAgIGdyYWRpZW50VHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTEyLDApIgogICAgICAgeDE9IjE2OSIKICAgICAgIHkxPSIxMTAuMzM4MDUiCiAgICAgICB4Mj0iMTY5IgogICAgICAgeTI9IjkzLjIwNDg0OSIgLz4KICAgIDxsaW5lYXJHcmFkaWVudAogICAgICAgeGxpbms6aHJlZj0iI2xpbmVhckdyYWRpZW50MzA4MSIKICAgICAgIGlkPSJsaW5lYXJHcmFkaWVudDI3NTMiCiAgICAgICBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIKICAgICAgIGdyYWRpZW50VHJhbnNmb3JtPSJ0cmFuc2xhdGUoMTMzLDcwLjk5OTk5KSIKICAgICAgIHgxPSIxNS4wODk1MjEiCiAgICAgICB5MT0iMTUuMjkxOTk0IgogICAgICAgeDI9IjE0IgogICAgICAgeTI9IjUyLjUxMDU3NCIgLz4KICAgIDxyYWRpYWxHcmFkaWVudAogICAgICAgeGxpbms6aHJlZj0iI2xpbmVhckdyYWRpZW50MjY3OSIKICAgICAgIGlkPSJyYWRpYWxHcmFkaWVudDI3OTEiCiAgICAgICBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIKICAgICAgIGdyYWRpZW50VHJhbnNmb3JtPSJtYXRyaXgoMy41NjIzMDllLTYsLTEuMDcyMDUsMS45OTIxMDQsLTEuMjUwNjU4ZS02LC00Mi42MTE2NSwyODMuNzg5MSkiCiAgICAgICBjeD0iMTY5Ljc3MTcxIgogICAgICAgY3k9IjEwMC4yMDEwNyIKICAgICAgIGZ4PSIxNjkuNzcxNzEiCiAgICAgICBmeT0iMTAwLjIwMTA3IgogICAgICAgcj0iMTEiIC8+CiAgICA8bGluZWFyR3JhZGllbnQKICAgICAgIHhsaW5rOmhyZWY9IiNsaW5lYXJHcmFkaWVudDI2OTciCiAgICAgICBpZD0ibGluZWFyR3JhZGllbnQyNzkzIgogICAgICAgZ3JhZGllbnRVbml0cz0idXNlclNwYWNlT25Vc2UiCiAgICAgICBncmFkaWVudFRyYW5zZm9ybT0idHJhbnNsYXRlKC0xMiwwKSIKICAgICAgIHgxPSIxNjkiCiAgICAgICB5MT0iMTEwLjMzODA1IgogICAgICAgeDI9IjE2OSIKICAgICAgIHkyPSI5My4yMDQ4NDkiIC8+CiAgICA8bGluZWFyR3JhZGllbnQKICAgICAgIHhsaW5rOmhyZWY9IiNsaW5lYXJHcmFkaWVudDI2OTciCiAgICAgICBpZD0ibGluZWFyR3JhZGllbnQyNzk1IgogICAgICAgZ3JhZGllbnRVbml0cz0idXNlclNwYWNlT25Vc2UiCiAgICAgICBncmFkaWVudFRyYW5zZm9ybT0idHJhbnNsYXRlKC0xMiwwKSIKICAgICAgIHgxPSIxNjkiCiAgICAgICB5MT0iMTEwLjMzODA1IgogICAgICAgeDI9IjE2OSIKICAgICAgIHkyPSI5My4yMDQ4NDkiIC8+CiAgICA8bGluZWFyR3JhZGllbnQKICAgICAgIHhsaW5rOmhyZWY9IiNsaW5lYXJHcmFkaWVudDMwODEiCiAgICAgICBpZD0ibGluZWFyR3JhZGllbnQyNzk3IgogICAgICAgZ3JhZGllbnRVbml0cz0idXNlclNwYWNlT25Vc2UiCiAgICAgICBncmFkaWVudFRyYW5zZm9ybT0idHJhbnNsYXRlKDEzMyw3MC45OTk5OSkiCiAgICAgICB4MT0iMTUuMDg5NTIxIgogICAgICAgeTE9IjE1LjI5MTk5NCIKICAgICAgIHgyPSIxNCIKICAgICAgIHkyPSI1Mi41MTA1NzQiIC8+CiAgICA8bGluZWFyR3JhZGllbnQKICAgICAgIHhsaW5rOmhyZWY9IiNsaW5lYXJHcmFkaWVudDMwODEiCiAgICAgICBpZD0ibGluZWFyR3JhZGllbnQyODAwIgogICAgICAgZ3JhZGllbnRVbml0cz0idXNlclNwYWNlT25Vc2UiCiAgICAgICBncmFkaWVudFRyYW5zZm9ybT0idHJhbnNsYXRlKC00ZS00LC0wLjA5NDI2KSIKICAgICAgIHgxPSIxNS4wODk1MjEiCiAgICAgICB5MT0iMTUuMjkxOTk0IgogICAgICAgeDI9IjE0IgogICAgICAgeTI9IjUyLjUxMDU3NCIgLz4KICAgIDxsaW5lYXJHcmFkaWVudAogICAgICAgeGxpbms6aHJlZj0iI2xpbmVhckdyYWRpZW50MjY5NyIKICAgICAgIGlkPSJsaW5lYXJHcmFkaWVudDI4MDMiCiAgICAgICBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIKICAgICAgIGdyYWRpZW50VHJhbnNmb3JtPSJtYXRyaXgoMSwwLDAsMS4wMDQzODQsLTE0NS4wMDA0LC03MS40NjI1KSIKICAgICAgIHgxPSIxNjkiCiAgICAgICB5MT0iMTEwLjMzODA1IgogICAgICAgeDI9IjE2OSIKICAgICAgIHkyPSI5My4yMDQ4NDkiIC8+CiAgICA8bGluZWFyR3JhZGllbnQKICAgICAgIHhsaW5rOmhyZWY9IiNsaW5lYXJHcmFkaWVudDI2OTciCiAgICAgICBpZD0ibGluZWFyR3JhZGllbnQyODA2IgogICAgICAgZ3JhZGllbnRVbml0cz0idXNlclNwYWNlT25Vc2UiCiAgICAgICBncmFkaWVudFRyYW5zZm9ybT0idHJhbnNsYXRlKC0xNDUuMDAwNCwtOTcuMDk0MykiCiAgICAgICB4MT0iMTY5IgogICAgICAgeTE9IjExMC4zMzgwNSIKICAgICAgIHgyPSIxNjkiCiAgICAgICB5Mj0iOTMuMjA0ODQ5IiAvPgogICAgPHJhZGlhbEdyYWRpZW50CiAgICAgICB4bGluazpocmVmPSIjbGluZWFyR3JhZGllbnQyNjc5IgogICAgICAgaWQ9InJhZGlhbEdyYWRpZW50MjgwOSIKICAgICAgIGdyYWRpZW50VW5pdHM9InVzZXJTcGFjZU9uVXNlIgogICAgICAgZ3JhZGllbnRUcmFuc2Zvcm09Im1hdHJpeCgzLjU2MjMwOWUtNiwtMS4wNzIwNSwxLjk5MjEwNCwtMS4yNTA2NThlLTYsLTE3NS42MTIxLDIxMi42OTQ5KSIKICAgICAgIGN4PSIxNjkuNzcxNzEiCiAgICAgICBjeT0iMTAwLjIwMTA3IgogICAgICAgZng9IjE2OS43NzE3MSIKICAgICAgIGZ5PSIxMDAuMjAxMDciCiAgICAgICByPSIxMSIgLz4KICAgIDxsaW5lYXJHcmFkaWVudAogICAgICAgeGxpbms6aHJlZj0iI2xpbmVhckdyYWRpZW50MjgxNyIKICAgICAgIGlkPSJsaW5lYXJHcmFkaWVudDI4MjMiCiAgICAgICBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIKICAgICAgIGdyYWRpZW50VHJhbnNmb3JtPSJtYXRyaXgoMS4xMDMyNjIsMCwwLDEuMDU0OTE3LC0xNjMuMTIyOCwtNzYuMzExMzgpIgogICAgICAgeDE9IjE3NC44MzM2MyIKICAgICAgIHkxPSI4NC4yNjM0ODkiCiAgICAgICB4Mj0iMTc0Ljc0NTI0IgogICAgICAgeTI9IjEwNS40OTA4MyIgLz4KICAgIDxsaW5lYXJHcmFkaWVudAogICAgICAgeGxpbms6aHJlZj0iI2xpbmVhckdyYWRpZW50MzA4MSIKICAgICAgIGlkPSJsaW5lYXJHcmFkaWVudDI4MjUiCiAgICAgICBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIKICAgICAgIGdyYWRpZW50VHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTRlLTQsLTI2LjA5NDI2KSIKICAgICAgIHgxPSIxNS4wODk1MjEiCiAgICAgICB5MT0iMTUuMjkxOTk0IgogICAgICAgeDI9IjE0IgogICAgICAgeTI9IjUyLjUxMDU3NCIgLz4KICAgIDxyYWRpYWxHcmFkaWVudAogICAgICAgeGxpbms6aHJlZj0iI2xpbmVhckdyYWRpZW50MjY3OSIKICAgICAgIGlkPSJyYWRpYWxHcmFkaWVudDI4MzEiCiAgICAgICBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIKICAgICAgIGdyYWRpZW50VHJhbnNmb3JtPSJtYXRyaXgoMy41NjIzMDllLTYsLTEuMDcyMDUsMS45OTIxMDQsLTEuMjUwNjU4ZS02LC0xNzUuNjEyMSwxODYuNjk0OSkiCiAgICAgICBjeD0iMTY5Ljc3MTcxIgogICAgICAgY3k9IjEwMC4yMDEwNyIKICAgICAgIGZ4PSIxNjkuNzcxNzEiCiAgICAgICBmeT0iMTAwLjIwMTA3IgogICAgICAgcj0iMTEiIC8+CiAgICA8bGluZWFyR3JhZGllbnQKICAgICAgIHhsaW5rOmhyZWY9IiNsaW5lYXJHcmFkaWVudDI4MTciCiAgICAgICBpZD0ibGluZWFyR3JhZGllbnQyODU4IgogICAgICAgZ3JhZGllbnRVbml0cz0idXNlclNwYWNlT25Vc2UiCiAgICAgICBncmFkaWVudFRyYW5zZm9ybT0ibWF0cml4KDEuMTAzMjYyLDAsMCwxLjA1NDkxNywtMTYzLjEyMjgsLTc2LjMxMTM4KSIKICAgICAgIHgxPSIxNzQuODMzNjMiCiAgICAgICB5MT0iODQuMjYzNDg5IgogICAgICAgeDI9IjE3NC43NDUyNCIKICAgICAgIHkyPSIxMDUuNDkwODMiIC8+CiAgICA8cmFkaWFsR3JhZGllbnQKICAgICAgIHhsaW5rOmhyZWY9IiNsaW5lYXJHcmFkaWVudDI2NzkiCiAgICAgICBpZD0icmFkaWFsR3JhZGllbnQyODYwIgogICAgICAgZ3JhZGllbnRVbml0cz0idXNlclNwYWNlT25Vc2UiCiAgICAgICBncmFkaWVudFRyYW5zZm9ybT0ibWF0cml4KDMuNTYyMzA5ZS02LC0xLjA3MjA1LDEuOTkyMTA0LC0xLjI1MDY1OGUtNiwtMTc1LjYxMjEsMjEyLjY5NDkpIgogICAgICAgY3g9IjE2OS43NzE3MSIKICAgICAgIGN5PSIxMDAuMjAxMDciCiAgICAgICBmeD0iMTY5Ljc3MTcxIgogICAgICAgZnk9IjEwMC4yMDEwNyIKICAgICAgIHI9IjExIiAvPgogICAgPGxpbmVhckdyYWRpZW50CiAgICAgICB4bGluazpocmVmPSIjbGluZWFyR3JhZGllbnQyNjk3IgogICAgICAgaWQ9ImxpbmVhckdyYWRpZW50Mjg2MiIKICAgICAgIGdyYWRpZW50VW5pdHM9InVzZXJTcGFjZU9uVXNlIgogICAgICAgZ3JhZGllbnRUcmFuc2Zvcm09Im1hdHJpeCgxLDAsMCwxLjAwNDM4NCwtMTQ1LjAwMDQsLTcxLjQ2MjUpIgogICAgICAgeDE9IjE2OSIKICAgICAgIHkxPSIxMTAuMzM4MDUiCiAgICAgICB4Mj0iMTY5IgogICAgICAgeTI9IjkzLjIwNDg0OSIgLz4KICAgIDxsaW5lYXJHcmFkaWVudAogICAgICAgeGxpbms6aHJlZj0iI2xpbmVhckdyYWRpZW50MzA4MSIKICAgICAgIGlkPSJsaW5lYXJHcmFkaWVudDI4NjQiCiAgICAgICBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIKICAgICAgIGdyYWRpZW50VHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTRlLTQsLTAuMDk0MjYpIgogICAgICAgeDE9IjE1LjA4OTUyMSIKICAgICAgIHkxPSIxNS4yOTE5OTQiCiAgICAgICB4Mj0iMTQiCiAgICAgICB5Mj0iNTIuNTEwNTc0IiAvPgogICAgPGxpbmVhckdyYWRpZW50CiAgICAgICB4bGluazpocmVmPSIjbGluZWFyR3JhZGllbnQzMDgxIgogICAgICAgaWQ9ImxpbmVhckdyYWRpZW50MzQyMSIKICAgICAgIGdyYWRpZW50VW5pdHM9InVzZXJTcGFjZU9uVXNlIgogICAgICAgZ3JhZGllbnRUcmFuc2Zvcm09Im1hdHJpeCgzLjAwMDE5OCwwLDAsMSwtMzUuNjcwMjI1LC0yMi43NTYwNDMpIgogICAgICAgeDE9IjE1LjA4OTUyMSIKICAgICAgIHkxPSIxNS4yOTE5OTQiCiAgICAgICB4Mj0iMTQiCiAgICAgICB5Mj0iNTIuNTEwNTc0IiAvPgogICAgPGxpbmVhckdyYWRpZW50CiAgICAgICB4bGluazpocmVmPSIjbGluZWFyR3JhZGllbnQyNjk3IgogICAgICAgaWQ9ImxpbmVhckdyYWRpZW50MzQyNCIKICAgICAgIGdyYWRpZW50VW5pdHM9InVzZXJTcGFjZU9uVXNlIgogICAgICAgZ3JhZGllbnRUcmFuc2Zvcm09Im1hdHJpeCgyLjQ5ODg4NCwwLDAsMS4wMDQzODQsLTM4My43NDE5LC05NS4wNjIwMTIpIgogICAgICAgeDE9IjE2OSIKICAgICAgIHkxPSIxMTAuMzM4MDUiCiAgICAgICB4Mj0iMTY5IgogICAgICAgeTI9IjkzLjIwNDg0OSIgLz4KICAgIDxsaW5lYXJHcmFkaWVudAogICAgICAgeGxpbms6aHJlZj0iI2xpbmVhckdyYWRpZW50MjgxNyIKICAgICAgIGlkPSJsaW5lYXJHcmFkaWVudDM0MzAiCiAgICAgICBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIKICAgICAgIGdyYWRpZW50VHJhbnNmb3JtPSJtYXRyaXgoMi42MjQ1MjUsMCwwLDEuMDU0OTE3LC00MDcuODkxODksLTk2LjM5NDQwOCkiCiAgICAgICB4MT0iMTc0LjgzMzYzIgogICAgICAgeTE9Ijg0LjI2MzQ4OSIKICAgICAgIHgyPSIxNzQuNzQ1MjQiCiAgICAgICB5Mj0iMTA1LjQ5MDgzIiAvPgogICAgPGxpbmVhckdyYWRpZW50CiAgICAgICB4bGluazpocmVmPSIjbGluZWFyR3JhZGllbnQ1MDA3IgogICAgICAgaWQ9ImxpbmVhckdyYWRpZW50NTAxOSIKICAgICAgIHgxPSI0MC4yNTU4ODYiCiAgICAgICB5MT0iNy4wNTYxMTY2IgogICAgICAgeDI9IjQwLjM5MzcwMyIKICAgICAgIHkyPSIxNi44NzM2MTEiCiAgICAgICBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIKICAgICAgIGdyYWRpZW50VHJhbnNmb3JtPSJtYXRyaXgoMC44MzYyMTYxNSwtMC43OTAxMzYyNiwwLjgwMDczMjk3LDAuODI1MTQ5ODYsLTYuMTg0MzIwNSwyOS4zNDMxNzIpIiAvPgogICAgPHJhZGlhbEdyYWRpZW50CiAgICAgICB4bGluazpocmVmPSIjbGluZWFyR3JhZGllbnQzOTA2LTciCiAgICAgICBpZD0icmFkaWFsR3JhZGllbnQzOTEyLTkiCiAgICAgICBjeD0iMzYuMTMxNjgiCiAgICAgICBjeT0iOC41MjE1ODE2IgogICAgICAgZng9IjM2LjEzMTY4IgogICAgICAgZnk9IjguNTIxNTgxNiIKICAgICAgIHI9IjE4LjA5Nzk4NiIKICAgICAgIGdyYWRpZW50VHJhbnNmb3JtPSJtYXRyaXgoLTAuMTYyMjMyNjQsMS4xMTA5MzE3LC0xLjExNTQ4NzksLTAuMTY5MDU2ODksNTYuNDc5MTk1LC0zMS44MDE0NDQpIgogICAgICAgZ3JhZGllbnRVbml0cz0idXNlclNwYWNlT25Vc2UiIC8+CiAgICA8bGluZWFyR3JhZGllbnQKICAgICAgIGlkPSJsaW5lYXJHcmFkaWVudDM5MDYtNyI+CiAgICAgIDxzdG9wCiAgICAgICAgIHN0eWxlPSJzdG9wLWNvbG9yOiNlYmY5MGE7c3RvcC1vcGFjaXR5OjA7IgogICAgICAgICBvZmZzZXQ9IjAiCiAgICAgICAgIGlkPSJzdG9wMzkwOC0zIiAvPgogICAgICA8c3RvcAogICAgICAgICBzdHlsZT0ic3RvcC1jb2xvcjojZWJmOTBhO3N0b3Atb3BhY2l0eToxOyIKICAgICAgICAgb2Zmc2V0PSIxIgogICAgICAgICBpZD0ic3RvcDM5MTAtMCIgLz4KICAgIDwvbGluZWFyR3JhZGllbnQ+CiAgICA8cmFkaWFsR3JhZGllbnQKICAgICAgIHhsaW5rOmhyZWY9IiNsaW5lYXJHcmFkaWVudDM4ODEiCiAgICAgICBpZD0icmFkaWFsR3JhZGllbnQzODg3IgogICAgICAgY3g9IjQwLjA0MjEyMiIKICAgICAgIGN5PSIxMC43NDMyNzIiCiAgICAgICBmeD0iNDAuMDQyMTIyIgogICAgICAgZnk9IjEwLjc0MzI3MiIKICAgICAgIHI9IjE5LjU5NTUyMSIKICAgICAgIGdyYWRpZW50VHJhbnNmb3JtPSJtYXRyaXgoMC42MTExMDI0OCwwLjcyMjU3NzU0LC0xLjI5MjYyNzksMS4wOTQzMTYxLDI5LjQ1OTMzNSwtMjkuOTUwNDQzKSIKICAgICAgIGdyYWRpZW50VW5pdHM9InVzZXJTcGFjZU9uVXNlIiAvPgogICAgPGxpbmVhckdyYWRpZW50CiAgICAgICB4bGluazpocmVmPSIjbGluZWFyR3JhZGllbnQzOTcyIgogICAgICAgaWQ9ImxpbmVhckdyYWRpZW50Mzk3OCIKICAgICAgIHgxPSIyNSIKICAgICAgIHkxPSI2IgogICAgICAgeDI9IjM3IgogICAgICAgeTI9IjM2IgogICAgICAgZ3JhZGllbnRVbml0cz0idXNlclNwYWNlT25Vc2UiIC8+CiAgPC9kZWZzPgogIDxtZXRhZGF0YQogICAgIGlkPSJtZXRhZGF0YTEzMTIiPgogICAgPHJkZjpSREY+CiAgICAgIDxjYzpXb3JrCiAgICAgICAgIHJkZjphYm91dD0iIj4KICAgICAgICA8ZGM6Zm9ybWF0PmltYWdlL3N2Zyt4bWw8L2RjOmZvcm1hdD4KICAgICAgICA8ZGM6dHlwZQogICAgICAgICAgIHJkZjpyZXNvdXJjZT0iaHR0cDovL3B1cmwub3JnL2RjL2RjbWl0eXBlL1N0aWxsSW1hZ2UiIC8+CiAgICAgICAgPGRjOmNyZWF0b3I+CiAgICAgICAgICA8Y2M6QWdlbnQ+CiAgICAgICAgICAgIDxkYzp0aXRsZT5MYXBvIENhbGFtYW5kcmVpPC9kYzp0aXRsZT4KICAgICAgICAgIDwvY2M6QWdlbnQ+CiAgICAgICAgPC9kYzpjcmVhdG9yPgogICAgICAgIDxjYzpsaWNlbnNlCiAgICAgICAgICAgcmRmOnJlc291cmNlPSJodHRwOi8vY3JlYXRpdmVjb21tb25zLm9yZy9saWNlbnNlcy9ieS1zYS8yLjAvIiAvPgogICAgICAgIDxkYzpzdWJqZWN0PgogICAgICAgICAgPHJkZjpCYWc+CiAgICAgICAgICAgIDxyZGY6bGk+bWVkaWE8L3JkZjpsaT4KICAgICAgICAgICAgPHJkZjpsaT5zdG9wPC9yZGY6bGk+CiAgICAgICAgICAgIDxyZGY6bGk+cGxheWJhY2s8L3JkZjpsaT4KICAgICAgICAgICAgPHJkZjpsaT52aWRlbzwvcmRmOmxpPgogICAgICAgICAgICA8cmRmOmxpPm11c2ljPC9yZGY6bGk+CiAgICAgICAgICA8L3JkZjpCYWc+CiAgICAgICAgPC9kYzpzdWJqZWN0PgogICAgICAgIDxkYzpjb250cmlidXRvcj4KICAgICAgICAgIDxjYzpBZ2VudD4KICAgICAgICAgICAgPGRjOnRpdGxlPkpha3ViIFN0ZWluZXI8L2RjOnRpdGxlPgogICAgICAgICAgPC9jYzpBZ2VudD4KICAgICAgICA8L2RjOmNvbnRyaWJ1dG9yPgogICAgICA8L2NjOldvcms+CiAgICAgIDxjYzpMaWNlbnNlCiAgICAgICAgIHJkZjphYm91dD0iaHR0cDovL2NyZWF0aXZlY29tbW9ucy5vcmcvbGljZW5zZXMvYnktc2EvMi4wLyI+CiAgICAgICAgPGNjOnBlcm1pdHMKICAgICAgICAgICByZGY6cmVzb3VyY2U9Imh0dHA6Ly93ZWIucmVzb3VyY2Uub3JnL2NjL1JlcHJvZHVjdGlvbiIgLz4KICAgICAgICA8Y2M6cGVybWl0cwogICAgICAgICAgIHJkZjpyZXNvdXJjZT0iaHR0cDovL3dlYi5yZXNvdXJjZS5vcmcvY2MvRGlzdHJpYnV0aW9uIiAvPgogICAgICAgIDxjYzpyZXF1aXJlcwogICAgICAgICAgIHJkZjpyZXNvdXJjZT0iaHR0cDovL3dlYi5yZXNvdXJjZS5vcmcvY2MvTm90aWNlIiAvPgogICAgICAgIDxjYzpyZXF1aXJlcwogICAgICAgICAgIHJkZjpyZXNvdXJjZT0iaHR0cDovL3dlYi5yZXNvdXJjZS5vcmcvY2MvQXR0cmlidXRpb24iIC8+CiAgICAgICAgPGNjOnBlcm1pdHMKICAgICAgICAgICByZGY6cmVzb3VyY2U9Imh0dHA6Ly93ZWIucmVzb3VyY2Uub3JnL2NjL0Rlcml2YXRpdmVXb3JrcyIgLz4KICAgICAgICA8Y2M6cmVxdWlyZXMKICAgICAgICAgICByZGY6cmVzb3VyY2U9Imh0dHA6Ly93ZWIucmVzb3VyY2Uub3JnL2NjL1NoYXJlQWxpa2UiIC8+CiAgICAgIDwvY2M6TGljZW5zZT4KICAgIDwvcmRmOlJERj4KICA8L21ldGFkYXRhPgogIDxnCiAgICAgaWQ9ImxheWVyMSIKICAgICBzdHlsZT0iZGlzcGxheTppbmxpbmUiCiAgICAgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMCwxNikiPgogICAgPHBhdGgKICAgICAgIHN0eWxlPSJmaWxsOiMzNGUwZTI7c3Ryb2tlOiMwNDJhMmE7c3Ryb2tlLXdpZHRoOjEuOTk5OTk5ODgwMDAwMDAwMDY7c3Ryb2tlLWxpbmVjYXA6YnV0dDtzdHJva2UtbGluZWpvaW46cm91bmQ7c3Ryb2tlLW1pdGVybGltaXQ6NDtzdHJva2Utb3BhY2l0eToxO3N0cm9rZS1kYXNoYXJyYXk6bm9uZTtkaXNwbGF5OmlubGluZSIKICAgICAgIGQ9Ik0gMzAuNTQyODM3LC01LjAwMDAwMDIgNTguOTk5OTk4LDE5LjE2MTY4IDMyLjQ4NzY2OCw0NS4wMDAwMDQgMi45OTk5OTk4LDE5LjkyNjg5MSB6IgogICAgICAgaWQ9InBhdGgzODY5LTAiIC8+CiAgICA8cGF0aAogICAgICAgc3R5bGU9ImZpbGw6dXJsKCNsaW5lYXJHcmFkaWVudDM5NzgpO3N0cm9rZTojMzRlMGUyO3N0cm9rZS13aWR0aDoxLjk5OTk5OTg4MDAwMDAwMDA2O3N0cm9rZS1saW5lY2FwOmJ1dHQ7c3Ryb2tlLWxpbmVqb2luOnJvdW5kO3N0cm9rZS1taXRlcmxpbWl0OjQ7c3Ryb2tlLW9wYWNpdHk6MTtzdHJva2UtZGFzaGFycmF5Om5vbmU7ZmlsbC1vcGFjaXR5OjEiCiAgICAgICBkPSJNIDMwLjU5MTgyLC0yLjAwMDAwMDEgNTYsMTkuMjYyMjc3IDMyLjMyODI3Niw0MiA2LDE5LjkzNTY2MyB6IgogICAgICAgaWQ9InBhdGgzODY5IiAvPgogICAgPHBhdGgKICAgICAgIHN0eWxlPSJmb250LXNpemU6NDBweDtmb250LXN0eWxlOm5vcm1hbDtmb250LXZhcmlhbnQ6bm9ybWFsO2ZvbnQtd2VpZ2h0OmJvbGQ7Zm9udC1zdHJldGNoOm5vcm1hbDtsaW5lLWhlaWdodDoxMjUlO2xldHRlci1zcGFjaW5nOjBweDt3b3JkLXNwYWNpbmc6MHB4O2ZpbGw6Izg4OGE4NTtmaWxsLW9wYWNpdHk6MTtzdHJva2U6IzJlMzQzNjtzdHJva2Utd2lkdGg6MjtzdHJva2UtbGluZWNhcDpidXR0O3N0cm9rZS1saW5lam9pbjpyb3VuZDtzdHJva2Utb3BhY2l0eToxO2Rpc3BsYXk6aW5saW5lO2ZvbnQtZmFtaWx5Ok5pbWJ1cyBSb21hbiBObzkgTDstaW5rc2NhcGUtZm9udC1zcGVjaWZpY2F0aW9uOk5pbWJ1cyBSb21hbiBObzkgTCBCb2xkIgogICAgICAgZD0ibSAyMywxOCAyLDE3IGMgNSwzIDksMyAxNCwwIGwgMiwtMTciCiAgICAgICBpZD0icGF0aDM4OTYiIC8+CiAgICA8cGF0aAogICAgICAgc3R5bGU9ImZpbGw6bm9uZTtzdHJva2U6IzJlMzQzNjtzdHJva2Utd2lkdGg6MjtzdHJva2UtbGluZWNhcDpidXR0O3N0cm9rZS1saW5lam9pbjptaXRlcjtzdHJva2Utb3BhY2l0eToxO2Rpc3BsYXk6aW5saW5lIgogICAgICAgZD0ibSAyNCwxOSBjIDQsNCAxMCw0IDE2LDQiCiAgICAgICBpZD0icGF0aDM5MTYtMSIgLz4KICAgIDxwYXRoCiAgICAgICBzdHlsZT0iZmlsbDp1cmwoI3JhZGlhbEdyYWRpZW50Mzg4Nyk7ZmlsbC1vcGFjaXR5OjE7c3Ryb2tlOiMzMDJiMDA7c3Ryb2tlLXdpZHRoOjIuMTc3ODAwNDI7c3Ryb2tlLWxpbmVjYXA6cm91bmQ7c3Ryb2tlLWxpbmVqb2luOnJvdW5kO3N0cm9rZS1taXRlcmxpbWl0OjQ7c3Ryb2tlLW9wYWNpdHk6MTtzdHJva2UtZGFzaGFycmF5Om5vbmU7c3Ryb2tlLWRhc2hvZmZzZXQ6MCIKICAgICAgIGlkPSJwYXRoMzkwNCIKICAgICAgIGQ9Im0gNjUuMDgwNDkyLDE4LjM2Mzg1OSBhIDE4LjUwNjYyLDE4LjUxNTk4OSAwIDEgMSAtMzcuMDEzMjQxLDAgMTguNTA2NjIsMTguNTE1OTg5IDAgMSAxIDM3LjAxMzI0MSwwIHoiCiAgICAgICB0cmFuc2Zvcm09Im1hdHJpeCgwLjkxODU5MDIxLDAsMCwwLjkxODEyNTQxLC0xMC43ODIzMDIsLTEyLjg2MDMyNikiIC8+CiAgICA8cGF0aAogICAgICAgc3R5bGU9ImZpbGw6bm9uZTtzdHJva2U6I2ZjZTk0ZjtzdHJva2Utd2lkdGg6Mi40NjgxNzM3NDAwMDAwMDAxMjtzdHJva2UtbGluZWNhcDpyb3VuZDtzdHJva2UtbGluZWpvaW46cm91bmQ7c3Ryb2tlLW1pdGVybGltaXQ6NDtzdHJva2Utb3BhY2l0eToxO3N0cm9rZS1kYXNoYXJyYXk6bm9uZTtzdHJva2UtZGFzaG9mZnNldDowO2Rpc3BsYXk6aW5saW5lIgogICAgICAgaWQ9InBhdGgzOTA0LTMiCiAgICAgICBkPSJtIDY1LjA4MDQ5MiwxOC4zNjM4NTkgYyAwLDEwLjIyNjA5OSAtOC4yODU2OTYsMTguNTE1OTg5IC0xOC41MDY2MiwxOC41MTU5ODkgLTEwLjIyMDkyNSwwIC0xOC41MDY2MjEsLTguMjg5ODkgLTE4LjUwNjYyMSwtMTguNTE1OTg5IDAsLTEwLjIyNjA5ODMgOC4yODU2OTYsLTE4LjUxNTk4OTEzIDE4LjUwNjYyMSwtMTguNTE1OTg5MTMgMTAuMjIwOTI0LDAgMTguNTA2NjIsOC4yODk4OTA4MyAxOC41MDY2MiwxOC41MTU5ODkxMyB6IgogICAgICAgdHJhbnNmb3JtPSJtYXRyaXgoMC44MTA1MjA3NiwwLDAsMC44MTAxMTA2NSwtNS43NDkwODk4LC0xMC44NzY3NTgpIiAvPgogICAgPGcKICAgICAgIHN0eWxlPSJmb250LXNpemU6NDBweDtmb250LXN0eWxlOm5vcm1hbDtmb250LXZhcmlhbnQ6bm9ybWFsO2ZvbnQtd2VpZ2h0OmJvbGQ7Zm9udC1zdHJldGNoOm5vcm1hbDtsaW5lLWhlaWdodDoxMjUlO2xldHRlci1zcGFjaW5nOjBweDt3b3JkLXNwYWNpbmc6MHB4O2ZpbGw6IzAwMDAwMDtmaWxsLW9wYWNpdHk6MTtzdHJva2U6bm9uZTtmb250LWZhbWlseTpOaW1idXMgUm9tYW4gTm85IEw7LWlua3NjYXBlLWZvbnQtc3BlY2lmaWNhdGlvbjpOaW1idXMgUm9tYW4gTm85IEwgQm9sZCIKICAgICAgIGlkPSJ0ZXh0Mzg4OSIKICAgICAgIHRyYW5zZm9ybT0idHJhbnNsYXRlKDAuMDQwMDAxLC0wLjA3OTk5OTQpIj4KICAgICAgPHBhdGgKICAgICAgICAgZD0ibSAzMS45NTk5OTksMTEuMTMzODQ1IGMgLTEuODM5OTk4LDAgLTMuMzYsMS41NjAwMDIgLTMuMzYsMy4zNiAwLDEuOTE5OTk4IDEuNDQwMDAyLDMuNCAzLjMyLDMuNCAxLjkxOTk5OCwwIDMuNDQsLTEuNDgwMDAxIDMuNDQsLTMuMzIgMCwtMS44Nzk5OTggLTEuNTIwMDAyLC0zLjQ0IC0zLjQsLTMuNDQgbSAxLC0zLjA1Mzg0NTYgYyAwLjUyLC00LjkxOTk5NTEgMC44MDAwMDEsLTYuMTYwMDAzOSAyLC0xMCAwLjU2LC0xLjc1OTk5ODMgMSwtMy4wODAwMDA5IDEsLTQgMCwtMi41OTk5OTc0IC0xLjg4MDAwMiwtNCAtNCwtNCAtMi4xNTk5OTgsMCAtNCwxLjQ4MDAwMjUgLTQsNCAwLDAuOTk5OTk5IDAuNDQwMDAxLDIuMjAwMDAxOCAxLDQgMS4xNTk5OTksMy43OTk5OTYyIDEuNDgwMDAxLDUuMDgwMDA0OSAyLDEwIGwgMiwwIgogICAgICAgICBzdHlsZT0iZm9udC1mYW1pbHk6TmltYnVzIFJvbWFuIE5vOSBMOy1pbmtzY2FwZS1mb250LXNwZWNpZmljYXRpb246TmltYnVzIFJvbWFuIE5vOSBMIEJvbGQiCiAgICAgICAgIGlkPSJwYXRoMzg5NCIgLz4KICAgIDwvZz4KICAgIDxwYXRoCiAgICAgICBzdHlsZT0iZmlsbDpub25lO3N0cm9rZTojMmUzNDM2O3N0cm9rZS13aWR0aDoyO3N0cm9rZS1saW5lY2FwOmJ1dHQ7c3Ryb2tlLWxpbmVqb2luOm1pdGVyO3N0cm9rZS1vcGFjaXR5OjEiCiAgICAgICBkPSJtIDI0LDQwIGMgNCw0IDEwLDQgMTYsNCIKICAgICAgIGlkPSJwYXRoMzkxNiIKICAgICAgIHRyYW5zZm9ybT0idHJhbnNsYXRlKDAsLTE2KSIgLz4KICAgIDxwYXRoCiAgICAgICBzdHlsZT0iZmlsbDpub25lO3N0cm9rZTojMmUzNDM2O3N0cm9rZS13aWR0aDoyO3N0cm9rZS1saW5lY2FwOmJ1dHQ7c3Ryb2tlLWxpbmVqb2luOm1pdGVyO3N0cm9rZS1vcGFjaXR5OjE7ZGlzcGxheTppbmxpbmUiCiAgICAgICBkPSJNIDI0LjIxMTUzOCwzMCBDIDI4LjIxMTUzOCwzNCAzNCwzNCA0MCwzNCIKICAgICAgIGlkPSJwYXRoMzkxNi0yIiAvPgogIDwvZz4KPC9zdmc+Cg==">
+    </td>
+    <td>
+        CAMSanity
+    </td>
+    <td>
+        Thu Sep 10 18:28:23 2026
+    </td>
+    <td colspan="3">
+        Consider Specifying the Stock Material
+    </td>
+</tr>
+        
+    </tr>
+</table>
+
+<p style="line-height: 100%; margin-bottom: 0cm"><br/>
+</p>
+</div>
+</body>
+</html>
